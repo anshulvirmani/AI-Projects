@@ -82,3 +82,42 @@ def get_draft():
     return draft_text
 
 draft_input = get_draft()
+
+if len(draft_input.split(" ")) > 700:
+    st.write("Please enter a shorter text. The maximum length is 700 words.")
+    st.stop()
+
+# Prompt template tunning options
+col1, col2 = st.columns(2)
+with col1:
+    option_tone = st.selectbox(
+        'Which tone would you like your redaction to have?',
+        ('Formal', 'Informal'))
+    
+with col2:
+    option_dialect = st.selectbox(
+        'Which English Dialect would you like?',
+        ('American', 'British'))
+    
+    
+# Output
+st.markdown("### Your Re-written text:")
+
+if draft_input:
+    if not openai_api_key:
+        st.warning('Please insert OpenAI API Key. \
+            Instructions [here](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key)', 
+            icon="⚠️")
+        st.stop()
+
+    llm = load_LLM(openai_api_key=openai_api_key)
+
+    prompt_with_draft = prompt.format(
+        tone=option_tone, 
+        dialect=option_dialect, 
+        draft=draft_input
+    )
+
+    improved_redaction = llm(prompt_with_draft)
+
+    st.write(improved_redaction)
