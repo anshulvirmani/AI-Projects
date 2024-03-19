@@ -1,0 +1,42 @@
+Theme,Project,Status,Go Live date,Notes
+Coach effectiveness,"Intent signalling:
+
+- Scoring/bucketing users based on engagement / intent/ new vs existing
+- update the priority based on engagement level
+- show the priority to the coach in student list in messages
+- derive intent of the user as a profile attribute (master row/DB)",Staging,20 Dec,
+,"To do list (Light weight task CRM):
+
+- auto creation of to-dos from the system (student level to start with)
+- state management of to-dos
+- framework: new student with intent > existing student recently engaged > new student without intent > existing student who is not engaged
+- admin intervention",Staging,20 Dec,Plan for adoption
+,"messages automation:
+
+- based on user segments (age group, experience level, username etc.) - abstract out the functionality",Staging,20 Dec,
+Experimentation,"messaging A/B:
+
+- experiment setup 
+- every student belongs to one of the experiments (and doesn't change post-assigning)
+- capability to run multiple experiments in parallel; for all users or a specific segment
+- every student will track the metrics (that was assigned when creating the experiment)
+- payment conversion
+- engagement (better CTR on links etc)",,,
+,Landing pages with various value propositions/offers,Done,16 Dec,
+,Removing phone number in the sign up flow,Parked,,
+Chess capability,"Puzzle set V2:
+
+- general & theme-based infinite puzzle sets
+- infinite puzzle set broken down into small subsets of 10 puzzles each; paginated at backend
+- student solves a subset and then moves to the next subset",WIP,,Plan for adoption
+,"Studies V2:
+
+- supporting more studies use cases
+- Interactivity
+- introduction",Not picked,,
+Building resources,"Tagging at resource level:
+
+- every resource contains metadata
+- resources - learning plan, game analysis, studies, puzzles etc.
+- auto tags (student attributes, content attributes), manual tags (coach initiated, fetched from tag master)
+- tagging system that allows us to create a tag master for a specific resource type",Done,,Plan for adoption
